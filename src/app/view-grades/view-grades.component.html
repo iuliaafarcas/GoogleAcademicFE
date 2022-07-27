@@ -1,0 +1,56 @@
+
+
+<div class="Chenar">
+    <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Your grades: </b></h4>
+    <br>
+    <div class=" chenarButoane " style="padding-bottom: 0%;">
+        <div style="text-align: center" id="outer">
+           
+            <button class="btn-grad inner"   style="cursor: pointer; "  id="year1" [disabled]="this.yearOfStudy.length==0" (click)="getCurrentYear(1);getGrades()" >
+                Year 1
+            </button>
+            &nbsp;
+            <button class="btn-grad inner" style="cursor: pointer;"   id="year2"  [disabled]="this.yearOfStudy.length<2" (click)="getCurrentYear(2);getGrades()">
+                Year 2
+            </button>
+            
+        </div>
+    
+      
+    </div>
+
+    <br>
+
+    <div>
+        <div style="position: relative; margin-left: 25px; margin-right: 25px;">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
+                        <th>Discipline</th>
+                        <th>Grade</th>
+                        
+                    </tr>
+
+                    <tbody id="disciplinesAndGrades">
+
+                        <tr *ngFor="let discipline of gradesForStudent">
+
+                            <td> {{discipline.disciplineName}}</td>
+                            <td> {{discipline.disciplineGrade}}</td>
+                           
+
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        
+
+    </div> 
+
+</div>
+

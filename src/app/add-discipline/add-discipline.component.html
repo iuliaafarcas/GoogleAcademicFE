@@ -1,0 +1,52 @@
+
+<div class="mainPage">
+<div class="ChenarSignUp"  >
+    <br>
+    <br>
+    <h1 class="title createAcc"> Add optional course </h1>
+    <br>
+  
+    <div style="text-align: center;">
+        <select id="discipline" (change)="changeYearOfStudy($event)" style="font-family: 'Roboto Slab', serif;background-color: #268aef; color: white;border: 0; height: 25px;  text-align: center;" >
+            <option value="0" style="color: white" disabled selected>Select your option</option>
+            <option *ngFor="let year of yearOfStudy" value="{{year.id}}">Year: {{year.year}} Specialization: {{year.specializationName}}</option>
+        </select>
+    </div>
+    <br>
+   
+    <div>
+
+        <form [formGroup]="addDisciplineForm" class="inputLogin">
+
+            <input type="text" id="name" name="nameSignUp" placeholder="Name of the course" formControlName = "name">
+            <br>
+            <br>
+
+            <input type="text" id="credits" name="credits" placeholder="Number of credits" formControlName = "credits">
+            <br>
+            <br>
+            <input type="text" id="curriculum" name="curriculum" placeholder="Curriculum description" formControlName = "curriculum">
+            <br>
+            <br>
+
+            
+
+        </form>
+
+       
+
+    </div>
+    <br>
+        <div class="parinteleButonului " style="text-align: center">
+            <button type="submit"  class="btn-grad" (click)="addDiscipline()" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px;">
+               Add 
+            </button>
+        </div>
+
+        
+
+
+
+</div>
+
+

@@ -1,0 +1,68 @@
+
+
+<div class="Chenar">
+    <div class="inputLogin">
+    <h4 class=" title2 " style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px;"><b> Enrol to a year (or at most 2 years) of study </b></h4>
+    <br>
+    <div class=" chenarButoane " style="padding-bottom: 0%;">
+
+        <div style="font-family: 'Fira Sans', sans-serif;">  Year of study: {{yearOfStudy[currentId].year}}</div>
+    </div>
+
+    <br>
+
+    <div>
+        <div style="position: relative; margin-left: 25px;
+        margin-right: 25px;">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
+                        <th >Discipline</th>
+                        <th>Optional</th>
+                        <th>Credits</th>
+                        <th>Teacher Name</th>
+                        
+                    </tr>
+
+                    <tbody id="disciplinesAndOptinals">
+
+                        <tr *ngFor="let discipline of disciplines">
+                            <td> {{discipline.name}}</td>
+                            <td> {{discipline.optional}}</td>
+                            <td> {{discipline.credits}}</td>
+                            <td> {{discipline.teacherName}}</td>
+                           
+
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <br>
+     
+
+        <div class="parinteleButonului">
+            <button class="btn-grad"  style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="enrol()">
+                Enrol
+            </button>
+        </div>
+            
+        <div style="text-align: center" id="outer">
+           
+            <button class="btn-grad inner"  style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="previousCurriculum()" id="prevButton" [disabled]="currentId===0">
+                Previous
+            </button>
+            &nbsp;
+            <button class="btn-grad inner"  style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="nextCurriculum()" id="nextButton"
+            [disabled]="currentId===yearOfStudy.length-1">
+                Next
+            </button>
+            
+        </div>
+
+
+    </div> 
+    </div>
+
+</div>

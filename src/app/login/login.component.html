@@ -1,0 +1,58 @@
+
+
+<div class="mainPage">
+
+    
+<div class="Chenar"  *ngIf="  !signUp  ">
+    <br>
+    <br>
+    <h1 class="title"> Login </h1>
+    <div>
+
+        <form [formGroup]="loginForm" class="inputLogin">
+
+            <label for="email" >Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Type your username here... " formControlName="email" required="">
+            <br>
+            <br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Type your password  here..." formControlName="password">
+
+        </form>
+
+
+
+
+        <br>
+        <br>
+        <form class="rememberMeCheckBox">
+            <div style="float: left;">
+                <input class="checkBoxInput" type="checkbox" id="rememberMe" name="rememberMe" value="rememberYes">
+                <label for="rememberMe"> Remember me</label><br>
+            </div>
+            <label style=" margin-left: 10%"> Forgot password? </label>
+
+        </form>
+
+
+
+
+
+        <br>
+        <div class="parinteleButonului">
+            <button class="btn-grad" (click)="redirectStudent()" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor:pointer">
+                Log in
+            </button>
+        </div>
+        <br>
+        <div class="createAccount">
+            Don't have an account? <a routerLink="/registration">Sign up!</a>
+        </div>
+       
+
+        
+    </div>
+
+</div>
+
+</div>

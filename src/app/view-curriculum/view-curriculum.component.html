@@ -1,0 +1,72 @@
+
+
+
+
+<div class="Chenar">
+    <br>
+    <div style="text-align: center" id="outer">
+           
+        <button class="btn-grad inner"   (click)="getDisciplinesByYearOfStudy(1);getOptionalDisciplinesByYearOfStudy(1)" id="year1" [disabled]="this.yearOfStudy.length==0" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;">
+            Year 1
+        </button>
+        &nbsp;
+        <button class="btn-grad inner" style="font-family: 'Roboto Slab', serif; text-align: center; font-size: 15px; cursor: pointer;" (click)="getDisciplinesByYearOfStudy(2);getOptionalDisciplinesByYearOfStudy(2)"  id="year2"  [disabled]="this.yearOfStudy.length<2" >
+            Year 2
+        </button>
+        
+    </div>
+    <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Mandatory disciplines </b></h4>
+
+
+
+     <div class=" chenarButoane " style="padding-bottom: 0%;">
+
+        <div style="font-family: 'Fira Sans', sans-serif; text-align: center;" > Year of study: {{yearOfStudy[currentId].year}} Specialization: {{yearOfStudy[currentId].specializationName}}</div>
+    </div>
+
+    <br>
+    
+
+    <div>
+        <div style="position: relative; margin-left: 25px;
+        margin-right: 25px;">
+            <div style="max-height: 220px; overflow: auto;">
+                <table>
+                    <tr style="position: sticky; top:0; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 15px;">
+                        <th>Discipline name</th>
+                        <th>Number of credits</th>
+                        <th>Curriculum</th>
+                    </tr>
+
+                    <tbody id="disciplinesAndOptinals">
+
+                        <tr *ngFor="let discipline of disciplines">
+                            <td> {{discipline.name}}</td>
+                            <td> {{discipline.credits}}</td>
+                            <td> {{discipline.curriculum.text}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <h4 class=" title2 " style="position: sticky; top:0;text-align: center; background-color: white;  font-family: 'Fira Sans', sans-serif; font-size: 24px; margin: 0%; padding-top: 20px;"><b> Optional disciplines </b></h4>
+<br>
+        <div style="position: relative; margin-left: 25px; margin-right: 25px;">
+        
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let discipline of optionalDisciplines" cdkDrag> <b>Discipline name:</b> {{discipline.name}} <b>Number of credits:</b>  {{discipline.credits}} <b>Curriculum:</b>  {{discipline.curriculum.text}}
+                    
+        </div> 
+</div>
+    
+
+      
+        <br>
+        <br>
+        
+
+
+    </div>
+
+</div>  
